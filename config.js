@@ -5,7 +5,7 @@
 // (assim o Google e as IAs leem sem precisar rodar JavaScript).
 // =====================================================================
 window.CONFIG = {
-  versao: "fibro-prototipo-v4",
+  versao: "fibro-prototipo-v5",
   prototipo: true, // true = mostra a faixa "Protótipo de proposta". Tirar na versão final.
 
   nome: "Fibro Odontologia",
