@@ -1,0 +1,3 @@
+# Protótipo: liberado para o robô ler o "noindex" das páginas.
+User-agent: *
+Allow: /

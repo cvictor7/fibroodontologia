@@ -1,0 +1,265 @@
+/* Fibro Odontologia · protótipo v2
+   Cores tiradas do logo. Fonte única (Urbanist), contraste de peso igual ao painel da clínica. */
+@font-face{
+  font-family:"Urbanist";
+  src:url("assets/fonts/urbanist.woff2") format("woff2");
+  font-weight:100 900;
+  font-display:swap;
+}
+:root{
+  --petroleo:#0f767d;
+  --agua:#099aab;
+  --abismo:#073a3f;
+  --abismo-2:#052b2f;
+  --espuma:#eaf6f7;
+  --branco:#ffffff;
+  --lima:#d4f05a;
+  --texto-2:#3f5f62;
+  --linha:#cfe4e6;
+  --zap:#1fa855;
+  --fonte:"Urbanist",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --folha-g:clamp(90px,16vw,200px);
+  --folha-p:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--fonte);font-size:17px;font-weight:500;line-height:1.55;color:var(--abismo);background:var(--branco);overflow-x:hidden;font-feature-settings:"ss01" 0}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--petroleo)}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.02em}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.faixa-in{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* foco */
+:focus-visible{outline:3px solid var(--abismo);outline-offset:3px;border-radius:6px}
+.servicos :focus-visible,.prova :focus-visible,.chamada :focus-visible,.rodape :focus-visible{outline-color:var(--lima)}
+
+/* faixa do protótipo */
+.faixa-prototipo{background:var(--abismo-2);color:#cfe4e6;font-size:.8rem;text-align:center;padding:6px 16px}
+.faixa-prototipo[hidden]{display:none}
+
+/* botões */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:999px;font:700 1rem/1.15 var(--fonte);text-decoration:none;border:0;cursor:pointer;text-align:center;transition:background-color .15s}
+.btn svg{flex:none}
+.btn-cheio{background:var(--petroleo);color:var(--branco)}
+.btn-cheio:hover{background:var(--abismo)}
+.btn-claro{background:var(--branco);color:var(--abismo)}
+.btn-claro:hover{background:var(--lima)}
+.btn-grande{min-height:58px;padding:0 28px;font-size:1.06rem}
+.link-seta{font-weight:700;color:var(--petroleo);text-decoration:none;border-bottom:2px solid var(--linha);padding-bottom:2px}
+.link-seta:hover{border-color:var(--petroleo)}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.topo.rolou{border-bottom-color:var(--linha)}
+.topo-in{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:20px}
+.marca{margin-right:auto;display:block}
+.marca img{height:32px;width:auto}
+.menu{display:none;gap:26px}
+.menu a{color:var(--abismo);text-decoration:none;font-weight:600;font-size:.98rem}
+.menu a:hover{color:var(--petroleo)}
+.topo-acoes{display:flex;align-items:center;gap:8px}
+.topo-ig{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:44px;height:44px;border-radius:999px;border:1.5px solid var(--linha);color:var(--petroleo);text-decoration:none;font-weight:700;font-size:.95rem}
+.topo-ig:hover{border-color:var(--petroleo)}
+.topo-ig span,.btn-topo span{display:none}
+.btn-topo{min-height:44px;width:44px;padding:0;font-size:.95rem;gap:7px}
+
+/* início */
+.inicio{padding:16px 0 56px;background:var(--branco)}
+.inicio-in{max-width:1180px;margin:0 auto;padding:0 20px;display:grid;gap:28px}
+.inicio-foto{margin:0;border-radius:var(--folha-g) var(--folha-p) var(--folha-g) var(--folha-p);overflow:hidden;aspect-ratio:16/10;background:var(--espuma);box-shadow:0 24px 50px -24px rgba(7,58,63,.45);animation:revela 1s cubic-bezier(.2,.7,.2,1) both}
+.inicio-foto img{width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+@keyframes revela{from{clip-path:inset(0 0 100% 0 round var(--folha-g) var(--folha-p) var(--folha-g) var(--folha-p))}to{clip-path:inset(0 0 0 0 round var(--folha-g) var(--folha-p) var(--folha-g) var(--folha-p))}}
+.inicio-local{font-weight:600;color:var(--petroleo);margin-bottom:12px}
+.inicio h1{font-size:clamp(2.5rem,9.5vw,4.9rem);font-weight:800;letter-spacing:-.035em;line-height:.98;color:var(--abismo);max-width:13ch}
+.inicio-lead{font-size:1.15rem;color:var(--texto-2);margin-top:18px;max-width:34em}
+.inicio-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:26px}
+.inicio-acoes .btn{width:100%}
+.inicio-prova{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:.98rem}
+.inicio-prova a{color:var(--abismo);text-decoration:none}
+.inicio-prova a:hover strong{text-decoration:underline}
+.estrelas{color:#e5a92a;letter-spacing:1px}
+.status{display:inline-flex;align-items:center;gap:9px;color:var(--texto-2)}
+.status::before,.status-grande::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:#9db3b5}
+[data-status="aberto"]::before{background:var(--zap) !important;box-shadow:0 0 0 4px rgba(31,168,85,.18)}
+[data-status="fechado"]::before{background:#cf5a43 !important}
+
+/* serviços: o painel da entrada da clínica, só que clicável */
+.servicos{position:relative;overflow:hidden;color:var(--branco);background:linear-gradient(155deg,var(--petroleo) 0%,#0b8893 55%,var(--agua) 100%);padding:64px 0 56px}
+.servicos::after{content:"";position:absolute;right:-90px;bottom:-60px;width:460px;height:470px;background:url("assets/dente-branco.png") no-repeat center/contain;opacity:.07;pointer-events:none}
+.servicos-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 20px}
+.titulo-painel{font-size:clamp(3rem,12vw,5.6rem);font-weight:800;letter-spacing:-.03em;line-height:.9;color:var(--branco)}
+.titulo-painel span{display:block;font-weight:200;letter-spacing:-.01em}
+.servicos-intro{margin-top:18px;max-width:30em;color:#d9f1f3;font-size:1.05rem}
+.filtros{margin-top:34px}
+.filtros-pergunta{font-weight:700;font-size:1.1rem;margin-bottom:12px}
+.filtros-lista{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -20px;padding:2px 20px 6px;scroll-snap-type:x proximity;scroll-padding-left:20px}
+.filtros-lista::-webkit-scrollbar{display:none}
+.chip{flex:none;scroll-snap-align:start;font:600 .95rem/1 var(--fonte);color:var(--branco);background:transparent;border:1.5px solid rgba(255,255,255,.5);border-radius:999px;padding:11px 16px;cursor:pointer;transition:background-color .15s,color .15s}
+.chip:hover{border-color:var(--branco)}
+.chip[aria-pressed="true"]{background:var(--branco);color:var(--abismo);border-color:var(--branco)}
+
+.vitrine{margin-top:30px}
+.srv-lista{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.28)}
+.srv{border-bottom:1px solid rgba(255,255,255,.28)}
+.srv.oculto{display:none}
+.srv h3{font-size:inherit;letter-spacing:0}
+.srv-nome{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:14px;width:100%;padding:17px 0;cursor:pointer;font:700 1.3rem/1.15 var(--fonte);color:var(--branco);text-transform:uppercase;letter-spacing:.01em}
+.srv-nome svg{flex:none;color:var(--branco);transition:transform .2s,color .2s}
+.srv-nome[aria-expanded="true"] svg,.srv.ativo .srv-nome svg{color:var(--lima)}
+.srv-nome[aria-expanded="true"] svg{transform:rotate(90deg)}
+.srv-nome[aria-expanded="true"],.srv.ativo .srv-nome{color:var(--lima)}
+.srv-det{background:var(--branco);color:var(--abismo);border-radius:6px 26px 6px 26px;padding:22px;margin:0 0 18px}
+.js .srv-det{display:none}
+.js .srv.aberto .srv-det{display:block;animation:abre .22s ease-out}
+@keyframes abre{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.srv-resumo{font-size:1.12rem;font-weight:600;line-height:1.45}
+.srv-det dl{margin:16px 0 20px;display:grid;gap:12px}
+.srv-det dt{font-weight:800;color:var(--petroleo);font-size:.95rem}
+.srv-det dd{margin:2px 0 0;color:var(--texto-2)}
+.srv-det .btn{width:100%}
+.srv-painel{display:none}
+.servicos-rodape{margin-top:26px;color:#d9f1f3}
+.servicos-rodape a{color:var(--branco);font-weight:700}
+
+/* primeira consulta */
+.consulta{background:var(--espuma);padding:64px 0}
+.consulta h2,.consultorio h2,.local h2,.duvidas h2{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-.03em}
+.passos{list-style:none;counter-reset:passo;margin:34px 0 0;padding:0;display:grid;gap:28px}
+.passos li{counter-increment:passo;position:relative;padding-left:72px}
+.passos li::before{content:counter(passo);position:absolute;left:0;top:-6px;font-size:3.6rem;font-weight:300;line-height:1;color:var(--petroleo)}
+.passos h3{font-size:1.3rem;font-weight:800;margin-bottom:6px}
+.passos p{color:var(--texto-2)}
+
+/* consultório */
+.consultorio{padding:72px 0}
+.consultorio-grid{display:grid;gap:32px}
+.consultorio-foto{margin:0}
+.consultorio-foto img{width:100%;max-height:520px;object-fit:cover;border-radius:var(--folha-p) 120px var(--folha-p) 120px}
+.consultorio-foto figcaption{margin-top:10px;font-size:.92rem;color:var(--texto-2)}
+.consultorio-lead{font-size:1.18rem;color:var(--texto-2);margin-top:14px;max-width:30em}
+.detalhes{margin:30px 0 0;display:grid;gap:22px}
+.detalhes div{border-top:2px solid var(--petroleo);padding-top:12px}
+.detalhes dt{font-weight:800;font-size:1.15rem}
+.detalhes dd{margin:4px 0 0;color:var(--texto-2)}
+
+.foto-tv{margin:30px 0 0}
+.foto-tv img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 0;border-radius:120px var(--folha-p) 120px var(--folha-p)}
+.foto-tv figcaption{margin-top:10px;font-size:.92rem;color:var(--texto-2)}
+
+/* prova social */
+.prova{background:var(--abismo);color:var(--branco);padding:20px 0}
+.prova-grid{display:grid}
+.prova-item{display:flex;align-items:center;gap:20px;padding:26px 0;color:var(--branco);text-decoration:none}
+.prova-item+.prova-item{border-top:1px solid rgba(255,255,255,.15)}
+.prova-num{font-size:clamp(3.2rem,12vw,4.6rem);font-weight:800;letter-spacing:-.04em;line-height:.9;flex:none;min-width:2.6em}
+.prova-txt{color:#cfe4e6;max-width:24em}
+.prova-txt .estrelas{display:block;margin-bottom:4px}
+.prova-item:hover .prova-txt{color:var(--branco)}
+
+/* horários e como chegar */
+.local{padding:72px 0}
+.local-grid{display:grid;gap:56px}
+.status-grande{display:inline-flex;align-items:center;gap:10px;font-weight:700;margin:16px 0 18px;font-size:1.05rem}
+.tabela-horarios{width:100%;border-collapse:collapse;font-size:1.02rem}
+.tabela-horarios th,.tabela-horarios td{padding:11px 0;border-bottom:1px solid var(--linha);text-align:left;font-weight:500}
+.tabela-horarios td{text-align:right;color:var(--texto-2)}
+.tabela-horarios tr.hoje th,.tabela-horarios tr.hoje td{font-weight:800;color:var(--abismo)}
+.tabela-horarios tr.hoje th::after{content:"hoje";margin-left:8px;font-size:.75rem;font-weight:700;background:var(--lima);color:var(--abismo);padding:2px 8px;border-radius:99px;vertical-align:2px}
+.rota{list-style:none;counter-reset:r;margin:22px 0 24px;padding:0;position:relative}
+.rota::before{content:"";position:absolute;left:15px;top:14px;bottom:14px;width:2px;background:var(--linha)}
+.rota li{counter-increment:r;position:relative;padding:0 0 18px 50px;color:var(--texto-2)}
+.rota li::before{content:counter(r);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--petroleo);color:var(--branco);display:grid;place-items:center;font-weight:800;font-size:.95rem}
+.rota strong{display:block;color:var(--abismo);font-size:1.08rem}
+.mapa{height:240px;border-radius:var(--folha-p);overflow:hidden;margin-bottom:18px;background:var(--espuma)}
+.mapa iframe{width:100%;height:100%;border:0}
+.mapa-capa{width:100%;height:100%;border:0;cursor:pointer;font:700 1rem var(--fonte);color:var(--petroleo);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:repeating-linear-gradient(0deg,transparent 0 38px,var(--linha) 38px 39px),repeating-linear-gradient(90deg,transparent 0 38px,var(--linha) 38px 39px),var(--espuma)}
+
+/* dúvidas */
+.duvidas{background:var(--espuma);padding:72px 0}
+.duvidas-grid{display:grid;gap:26px}
+.duvidas-cab p{margin-top:12px;color:var(--texto-2);font-size:1.08rem}
+.faq details{border-bottom:1px solid var(--linha)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 40px 18px 0;font-weight:700;font-size:1.1rem;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2.5px solid var(--petroleo);border-bottom:2.5px solid var(--petroleo);transform:translateY(-70%) rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq details p{padding:0 0 20px;color:var(--texto-2);max-width:40em}
+
+/* chamada final */
+.chamada{background:var(--abismo);color:var(--branco);padding:72px 0 80px;text-align:center}
+.chamada-in{display:flex;flex-direction:column;align-items:center}
+.chamada-dente{width:64px;margin-bottom:18px}
+.hashtag{font-size:clamp(2.8rem,12vw,6.4rem);font-weight:800;letter-spacing:-.04em;line-height:1;color:var(--lima)}
+.chamada-txt{margin:16px auto 28px;max-width:26em;color:#cfe4e6;font-size:1.12rem}
+.chamada-tel{margin-top:18px;color:#cfe4e6}
+.chamada-tel a{color:var(--branco);font-weight:700}
+
+/* rodapé */
+.rodape{background:var(--abismo-2);color:#b6d0d2;padding:52px 0;font-size:.96rem}
+.rodape a{color:var(--branco)}
+.rodape-grid{display:grid;gap:26px}
+.rodape-logo{width:150px}
+.rodape-tit{font-size:1rem;font-weight:800;color:var(--branco);letter-spacing:0;margin-bottom:6px}
+.rodape-base{margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);font-size:.85rem;color:#8fb0b3}
+.a-confirmar{background:var(--lima);color:var(--abismo);border-radius:6px;padding:1px 7px;font-size:.8rem;font-weight:700}
+
+/* tablet */
+@media (min-width:700px){
+  .inicio-acoes .btn{width:auto}
+  .passos{grid-template-columns:repeat(3,1fr);gap:32px}
+  .passos li{padding:72px 0 0}
+  .passos li::before{top:0}
+  .detalhes{grid-template-columns:1fr 1fr}
+  .prova-grid{grid-template-columns:1fr 1fr}
+  .prova-item+.prova-item{border-top:0;border-left:1px solid rgba(255,255,255,.15);padding-left:32px}
+  .rodape-grid{grid-template-columns:1fr 1fr}
+}
+
+/* computador */
+@media (min-width:1000px){
+  .menu{display:flex}
+  .topo-ig{width:auto;padding:0 16px}
+  .btn-topo{width:auto;padding:0 18px}
+  .topo-ig span,.btn-topo span{display:inline}
+  .marca img{height:38px}
+  .inicio{padding:40px 0 96px;background:linear-gradient(90deg,var(--branco) 0 52%,var(--espuma) 52%)}
+  .inicio-in{grid-template-columns:1fr 1fr;align-items:center;gap:64px}
+  .inicio-foto{order:2;aspect-ratio:auto;height:560px}
+  .inicio-txt{order:1}
+
+  .servicos{padding:104px 0 88px}
+  .servicos-cab{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:40px}
+  .filtros-lista{flex-wrap:wrap;overflow:visible;margin:0;padding:0;gap:7px}
+  .chip{padding:10px 13px;font-size:.92rem}
+  .vitrine{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start;margin-top:40px}
+  .js .srv-det{display:none !important}
+  .srv-nome{padding:14px 0;font-size:1.35rem}
+  .srv-nome:hover{color:var(--lima)}
+  .srv-nome[aria-expanded="true"] svg{transform:none}
+  .js .srv-painel{display:block;position:sticky;top:96px;background:var(--branco);color:var(--abismo);border-radius:10px 60px 10px 60px;padding:44px 48px;min-height:380px}
+  .srv-painel h3{font-size:2.6rem;font-weight:800;letter-spacing:-.03em;margin-bottom:16px}
+  .srv-painel .srv-resumo{font-size:1.3rem}
+  .srv-painel dl{margin:26px 0 30px;display:grid;grid-template-columns:9.5rem 1fr;gap:14px 20px;align-items:baseline;border-top:1px solid var(--linha);padding-top:22px}
+  .srv-painel dt{font-weight:800;color:var(--petroleo)}
+  .srv-painel dd{margin:0;color:var(--texto-2)}
+  .srv-painel .btn{width:auto}
+  .srv-painel.troca{animation:abre .22s ease-out}
+
+  .consulta{padding:96px 0}
+  .consultorio{padding:104px 0}
+  .consultorio-grid{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .local{padding:104px 0}
+  .local-grid{grid-template-columns:1fr 1fr;gap:80px}
+  .duvidas{padding:104px 0}
+  .duvidas-grid{grid-template-columns:.8fr 1.2fr;gap:72px}
+  .duvidas-cab{position:sticky;top:110px;align-self:start}
+  .chamada{padding:110px 0}
+  .rodape-grid{grid-template-columns:1.2fr 1fr 1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+}
